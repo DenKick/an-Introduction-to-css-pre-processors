@@ -98,11 +98,14 @@ div {
     
     ul {
       margin: 0;
+      
       li {
         float: left;
       }
+      
       a {
         color: $link-color;
+        
         &:hover {
             color: $link-hover;
         }
@@ -117,11 +120,14 @@ div {
     
     ul {
       margin: 0;
+      
       li {
         float: left;
       }
+      
       a {
         color: @link-color;
+        
         &:hover {
             color: @link-hover;
         }
@@ -135,10 +141,13 @@ div {
     
     ul
       margin 0
+      
       li
         float left
+        
       a
         color link-color
+        
         &:hover
           color link-hover
 
@@ -188,6 +197,7 @@ ul a:hover { color: #229ed3; }
 
     bordered(w)
       border: n solid #ddd
+      
       &:hover
         border-color: #999
             
