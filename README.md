@@ -147,3 +147,48 @@ ul li { float: left; }
 ul a { color: #999; }
 ul a:hover { color: #229ed3; }
 ```
+
+## Миксины
+
+Миксины - это набор свойств, которые компилируется в соответствии с переданными им параметрами или статическими правилами. С помощью них можно с лёгкостью создавать кроссбраузерные градиенты для заднего фона, стрелки-CSS и т.п.
+
+
+*SASS:*
+
+    @mixin bordered($width) {
+        border: $width solid #ddd;
+        &:hover {
+            border-color: #999;
+        }
+    }
+    h1 {
+        @include bordered(5px);
+    }
+
+*LESS:*
+
+    .bordered (@width) {
+        border: @width solid #ddd;
+        &:hover {
+            border-color: #999;
+        }
+    }
+    h1 {
+        .bordered(5px);
+    }
+
+*Stylus:*
+
+    bordered(w)
+        border: n solid #ddd
+        &:hover
+            border-color: #999
+    h1
+        bordered(5px)
+
+*Вывод в CSS:*
+
+```css
+h1 { border: 5px solid #ddd; }
+h1:hover { border-color: #999; }
+```
