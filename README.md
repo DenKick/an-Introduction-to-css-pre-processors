@@ -95,6 +95,7 @@ div {
 
     $link-color: #999;
     $link-hover: #229ed3;
+    
     ul {
         margin: 0;
         li {
@@ -113,6 +114,7 @@ div {
 
     @link-color: #999;
     @link-hover: #229ed3;
+    
     ul {
         margin: 0;
         li {
@@ -130,6 +132,7 @@ div {
 
     link-color = #999
     link-hover = #229ed3
+    
     ul
         margin 0
         li
@@ -157,10 +160,12 @@ ul a:hover { color: #229ed3; }
 
     @mixin bordered($width) {
         border: $width solid #ddd;
+        
         &:hover {
             border-color: #999;
         }
     }
+    
     h1 {
         @include bordered(5px);
     }
@@ -169,10 +174,12 @@ ul a:hover { color: #229ed3; }
 
     .bordered (@width) {
         border: @width solid #ddd;
+        
         &:hover {
             border-color: #999;
         }
     }
+    
     h1 {
         .bordered(5px);
     }
@@ -183,6 +190,7 @@ ul a:hover { color: #229ed3; }
         border: n solid #ddd
         &:hover
             border-color: #999
+            
     h1
         bordered(5px)
 
@@ -200,10 +208,12 @@ h1:hover { border-color: #999; }
 *SASS:*
 
     .block { margin: 10px 5px; }
+    
     p {
         @extend .block;
         border: 1px solid #eee;
     }
+    
     ul, ol {
         @extend .block;
         color: #333;
@@ -213,10 +223,12 @@ h1:hover { border-color: #999; }
 *LESS:*
 
     .block { margin: 10px 5px; }
+    
     p {
         &:extend(.block);
         border: 1px solid #eee;
     }
+    
     ul, ol {
         &:extend(.block);
         color: #333;
@@ -227,9 +239,11 @@ h1:hover { border-color: #999; }
 
     .block
         margin 10px 5px
+        
     p
         @extend .block
         border 1px solid #eee
+        
     ul
     ol
         @extend .block
