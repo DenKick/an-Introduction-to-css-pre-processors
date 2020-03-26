@@ -192,3 +192,54 @@ ul a:hover { color: #229ed3; }
 h1 { border: 5px solid #ddd; }
 h1:hover { border-color: #999; }
 ```
+
+## Расширения
+
+Расширения применяются для объединения общих правил для селекторов, вместо того, чтобы копировать их всем. Все селекторы с расширениями сгруппированы в скомпилированном CSS-файле. SASS расширяет каждый экземпляр расширенного селектора, который включает его дочерние селекторы и унаследованные свойства. Однако в LESS можно выбрать каждый экземпляр расширяемого селектора, добавив атрибут «all» для метода расширения, или же можно выбрать только основной экземпляр.
+
+*SASS:*
+
+    .block { margin: 10px 5px; }
+    p {
+        @extend .block;
+        border: 1px solid #eee;
+    }
+    ul, ol {
+        @extend .block;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+*LESS:*
+
+    .block { margin: 10px 5px; }
+    p {
+        &:extend(.block);
+        border: 1px solid #eee;
+    }
+    ul, ol {
+        &:extend(.block);
+        color: #333;
+        text-transform: uppercase;
+    }
+
+*Stylus:*
+
+    .block
+        margin 10px 5px
+    p
+        @extend .block
+        border 1px solid #eee
+    ul
+    ol
+        @extend .block
+        color #333
+        text-transform uppercase
+        
+*Вывод в CSS:*
+
+```css        
+.block, p, ul, ol { margin: 10px 5px; }
+p { border: 1px solid #eee; }
+ul, ol { color: #333; text-transform: uppercase; }
+```
