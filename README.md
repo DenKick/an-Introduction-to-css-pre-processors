@@ -59,7 +59,7 @@ CSS очень примитивен и даёт мало возможносте�
     $font-size: 16px;
 
     div {
-        font-size: $font-size;
+      font-size: $font-size;
     }
 
 
@@ -68,7 +68,7 @@ CSS очень примитивен и даёт мало возможносте�
     @font-size: 16px;
 
     div {
-        font-size: @font-size;
+      font-size: @font-size;
     }
 
 *Stylus:*
@@ -76,13 +76,13 @@ CSS очень примитивен и даёт мало возможносте�
     font-size = 16px
 
     div
-        font-size font-size
+      font-size font-size
 
 *Вывод в CSS:*
 
 ```css
 div {
-    font-size: 16px;
+  font-size: 16px;
 }
 ```
 
@@ -97,16 +97,16 @@ div {
     $link-hover: #229ed3;
     
     ul {
-        margin: 0;
-        li {
-            float: left;
+      margin: 0;
+      li {
+        float: left;
+      }
+      a {
+        color: $link-color;
+        &:hover {
+            color: $link-hover;
         }
-        a {
-            color: $link-color;
-            &:hover {
-                color: $link-hover;
-            }
-        }
+      }
     }
 
 
@@ -116,16 +116,16 @@ div {
     @link-hover: #229ed3;
     
     ul {
-        margin: 0;
-        li {
-            float: left;
+      margin: 0;
+      li {
+        float: left;
+      }
+      a {
+        color: @link-color;
+        &:hover {
+            color: @link-hover;
         }
-        a {
-            color: @link-color;
-            &:hover {
-                color: @link-hover;
-            }
-        }
+      }
     }
 
 *Stylus:*
@@ -134,13 +134,13 @@ div {
     link-hover = #229ed3
     
     ul
-        margin 0
-        li
-            float left
-        a
-            color link-color
-            &:hover
-                color link-hover
+      margin 0
+      li
+        float left
+      a
+        color link-color
+        &:hover
+          color link-hover
 
 *Вывод в CSS:*
 
@@ -159,40 +159,40 @@ ul a:hover { color: #229ed3; }
 *SASS:*
 
     @mixin bordered($width) {
-        border: $width solid #ddd;
+      border: $width solid #ddd;
         
-        &:hover {
-            border-color: #999;
-        }
+      &:hover {
+        border-color: #999;
+      }
     }
     
     h1 {
-        @include bordered(5px);
+      @include bordered(5px);
     }
 
 *LESS:*
 
     .bordered (@width) {
-        border: @width solid #ddd;
+      border: @width solid #ddd;
         
-        &:hover {
-            border-color: #999;
-        }
+      &:hover {
+        border-color: #999;
+      }
     }
     
     h1 {
-        .bordered(5px);
+      .bordered(5px);
     }
 
 *Stylus:*
 
     bordered(w)
-        border: n solid #ddd
-        &:hover
-            border-color: #999
+      border: n solid #ddd
+      &:hover
+        border-color: #999
             
     h1
-        bordered(5px)
+      bordered(5px)
 
 *Вывод в CSS:*
 
@@ -210,14 +210,14 @@ h1:hover { border-color: #999; }
     .block { margin: 10px 5px; }
     
     p {
-        @extend .block;
-        border: 1px solid #eee;
+      @extend .block;
+      border: 1px solid #eee;
     }
     
     ul, ol {
-        @extend .block;
-        color: #333;
-        text-transform: uppercase;
+      @extend .block;
+      color: #333;
+      text-transform: uppercase;
     }
 
 *LESS:*
@@ -225,30 +225,30 @@ h1:hover { border-color: #999; }
     .block { margin: 10px 5px; }
     
     p {
-        &:extend(.block);
-        border: 1px solid #eee;
+      &:extend(.block);
+      border: 1px solid #eee;
     }
     
     ul, ol {
-        &:extend(.block);
-        color: #333;
-        text-transform: uppercase;
+      &:extend(.block);
+      color: #333;
+      text-transform: uppercase;
     }
 
 *Stylus:*
 
     .block
-        margin 10px 5px
+      margin 10px 5px
         
     p
-        @extend .block
-        border 1px solid #eee
+      @extend .block
+      border 1px solid #eee
         
     ul
     ol
-        @extend .block
-        color #333
-        text-transform uppercase
+      @extend .block
+      color #333
+      text-transform uppercase
         
 *Вывод в CSS:*
 
