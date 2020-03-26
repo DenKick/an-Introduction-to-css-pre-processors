@@ -86,3 +86,65 @@ div {
     font-size: 16px;
 }
 ```
+
+## Вложенность
+В CSS отсутствует визуальная иерархия при работе с дочерними селекторами. Вы должны задавать стили селекторам и их комбинациям отдельно.
+Вложенность помогает видеть иерархию (прямо как в HTML) и это заметно повышает читаемость кода. В некоторых случаях вложенность перегружает селекторы и получается что-то вроде "поезда селекторов", поэтому пользуйтесь ей с умом.
+
+*SASS:*
+```css
+$link-color: #999;
+$link-hover: #229ed3;
+ul {
+    margin: 0;
+    li {
+        float: left;
+    }
+    a {
+        color: $link-color;
+        &:hover {
+            color: $link-hover;
+        }
+    }
+}
+```
+
+*LESS:*
+```css
+@link-color: #999;
+@link-hover: #229ed3;
+ul {
+    margin: 0;
+    li {
+        float: left;
+    }
+    a {
+        color: @link-color;
+        &:hover {
+            color: @link-hover;
+        }
+    }
+}
+```
+
+*Stylus:*
+```css
+link-color = #999
+link-hover = #229ed3
+ul
+    margin 0
+    li
+        float left
+    a
+        color link-color
+        &:hover
+            color link-hover
+```
+
+*Вывод в CSS:*
+```css
+ul { margin: 0; }
+ul li { float: left; }
+ul a { color: #999; }
+ul a:hover { color: #229ed3; }
+```
