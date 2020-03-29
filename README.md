@@ -267,3 +267,47 @@ h1:hover { border-color: #999; }
 p { border: 1px solid #eee; }
 ul, ol { color: #333; text-transform: uppercase; }
 ```
+
+
+## Операции с цветами
+
+Все три препроцессора имеют функции для работы с цветами. Вы можете изменить яркость или насыщенность исходного цвета, вы даже можете смешивать 2 и более разных цвета. Эта особенность не такая существенная, но неплохо иметь её ввиду.
+
+*SASS:*
+
+    saturate($color, $amount)
+    desaturate($color, $amount)
+    lighten($color, $amount)
+    darken($color, $amount)
+    adjust-hue($color, $amount)
+    opacify($color, $amount)
+    transparentize($color, $amount)
+    mix($color1, $color2[, $amount])
+    grayscale($color)
+    complement($color)
+
+*LESS:*
+
+    saturate(@color, @amount)
+    desaturate(@color, @amount)
+    lighten(@color, @amount)
+    darken(@color, @amount)
+    fadein(@color, @amount)
+    fadeout(@color, @amount)
+    fade(@color, @amount)
+    spin(@color, @amount)
+    mix(@color1, @color2, @weight)
+    grayscale(@color)
+    contrast(@color)
+
+*Stylus:*
+
+    red(color)
+    green(color)
+    blue(color)
+    alpha(color)
+    dark(color)
+    light(color)
+    hue(color)
+    saturation(color)
+    lightness(color)
