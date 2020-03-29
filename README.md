@@ -311,3 +311,60 @@ ul, ol { color: #333; text-transform: uppercase; }
     hue(color)
     saturation(color)
     lightness(color)
+
+
+## Выражения if/else
+
+Управляющие директивы и выражения помогают создавать аналогичные определения стиля в соответствии с согласованными условиями или переменными. SASS и Stylus поддерживают обычные условные выражения if / else. В LESS это достигается с помощью CSS Guards.
+
+*SASS:*
+
+    @if lightness($color) > 30% {
+        background-color: black;
+    }
+    @else {
+        background-color: white;
+    }
+    
+*LESS:*
+    
+    .mixin (@color) when (lightness(@color) > 30%) {
+        background-color: black;
+    }
+    .mixin (@color) when (lightness(@color) =<; 30%) {
+        background-color: white;
+    }
+    
+*Stylus:*
+    
+    if lightness(color) > 30%
+        background-color black
+    else
+        background-color white
+        
+## Циклы
+
+Циклы полезны, когда мы делаем проход по массиву или создаём серию повторяющихся стилей (например, задание ширины у гридов). Как и в случае с выражением if/else, LESS использует CSS Guard и рекурсивные миксины для циклов.
+
+*SASS:*
+
+    @for $i from 1px to 3px {
+        .border-#{i} {
+            border: $i solid blue;
+        }
+    }
+
+*LESS:*
+
+    .loop(@counter) when (@counter > 0){
+        .loop((@counter - 1));
+        .border-@{counter} {
+            border: 1px * @counter solid blue;
+        }
+    }
+
+*Stylus:*
+
+    for num in (1..3)
+        .border-{num}
+            border 1px * num solid blue
