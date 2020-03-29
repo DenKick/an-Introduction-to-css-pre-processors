@@ -403,21 +403,21 @@ ul, ol { color: #333; text-transform: uppercase; }
 
 *SASS:*
 
-@import "library";
-@import "mixins/mixin.scss";
-@import "reset.css";
+    @import "library";
+    @import "mixins/mixin.scss";
+    @import "reset.css";
 
 *LESS:*
 
-@import "library"
-@import "mixins/mixin.less"
-@import "reset.css"
+    @import "library"
+    @import "mixins/mixin.less"
+    @import "reset.css"
 
 *Stylus:*
 
-@import "library"
-@import "mixins/mixin.styl"
-@import "reset.css
+    @import "library"
+    @import "mixins/mixin.styl"
+    @import "reset.css
 
 ## Заключение
 
